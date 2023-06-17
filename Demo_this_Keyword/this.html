@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>JavaScript this Keyword</title>
+    </head>
+    <body>
+        <script>
+            var value = 50; //global variable
+            function My_function(){
+                var value = 100; //local variable
+                alert("Value: " + value)
+                alert("this.value: " + this.value)
+            }
+            My_function()
+        </script> 
+        <script>
+            const random = {
+                name: "John",
+                info(){
+                    console.log("Hi!, My name is " + this.name)
+                }
+            }
+            random.info()
+        </script>
+        <script>
+            const random1 = {
+                name: "Tutorial",
+                video: ["JavaScript", "this", "keyword"],
+                info(){
+                    this.video.forEach(function(tag){
+                        console.log(this.name, tag)
+                    }, this)
+                }
+            }
+            random1.info()
+        </script>
+    </body>
+</html>
